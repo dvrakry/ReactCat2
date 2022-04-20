@@ -45,6 +45,7 @@
     }
 
     const Form = ({ handleFormSubmit }) => {
+      const [value, setValue] = React.useState('');
       return (
         <form onSubmit={handleFormSubmit}>
           <input type="text" name="name" placeholder="영어 대사를 입력해주세요" />
