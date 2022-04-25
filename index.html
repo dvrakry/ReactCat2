@@ -121,9 +121,9 @@
     }
 
     const App = () => {
-      const CAT1 = "https://source.unsplash.com/collection/1";
-      const CAT2 = "https://source.unsplash.com/collection/2";
-      const CAT3 = "https://source.unsplash.com/collection/3";
+      const CAT1 = "https://cataas.com/cat/60b73094e04e18001194a309/says/react";
+      const CAT2 = "https://cataas.com//cat/5e9970351b7a400011744233/says/inflearn";
+      const CAT3 = "https://cataas.com/cat/595f280b557291a9750ebf65/says/JavaScript";
 
 
       const [counter, setCounter] = React.useState(
@@ -145,7 +145,7 @@
       function handleHeartClick() {
         const nextFavorites = [...favorites, mainCat]
         setFavorites(nextFavorites);
-        jsonLocalStorage.setItem('favorites', nextFavorites)
+        jsonLocalStorage.setItem('favorites', nextFavorites);
       }
 
       return (
@@ -161,6 +161,11 @@
     const 여기다가그려 = document.querySelector('#app');
 
     ReactDOM.render(<App />, 여기다가그려);
+    fetch('http://cataas.com/cat?json=true').then(function () {
+      return response.json();
+    }).then(function (myJson) {
+      console.log(JSON.stringify(myJson));
+    });
   </script>
 </body>
 
